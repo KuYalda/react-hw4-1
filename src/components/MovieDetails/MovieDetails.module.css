@@ -1,0 +1,22 @@
+.movie_section {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.img {
+  display: block;
+  padding: 0px 25px;
+}
+
+.genres {
+  margin-right: 10px;
+}
+
+.button_back {
+  display: block;
+  margin: 10px 0px 10px 25px;
+}
+
+.section_more {
+  padding: 0px 25px;
+}

@@ -4,6 +4,7 @@ import * as API from '../../services/fetchMovies';
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
+
   useEffect(() => {
     // console.log('match :', props.match);
     API.fetchMovieDB().then(({ data }) => setTrendMovies([...data.results]));
@@ -17,7 +18,7 @@ const Home = () => {
         <ul>
           {trendMovies.map(el => (
             <li key={el.id}>
-              <Link to={`/movies/${el.id}`}>{el.title}</Link>
+              <Link to={`/movie/${el.id}`}>{el.title}</Link>
             </li>
           ))}
         </ul>
