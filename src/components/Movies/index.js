@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const Movies = ({ onSubmit, value, onChange, movies }) => (
+const Movies = ({ onSubmit, value, onChange, movies, location }) => (
   <>
     <form onSubmit={onSubmit}>
       <input type="text" value={value} onChange={onChange} />
@@ -11,7 +11,14 @@ const Movies = ({ onSubmit, value, onChange, movies }) => (
       <ul>
         {movies.map(el => (
           <li key={el.id}>
-            <Link to={`/movie/${el.id}`}>{el.title}</Link>
+            <Link
+              to={{
+                pathname: `/movie/${el.id}`,
+                state: { from: { ...location } },
+              }}
+            >
+              {el.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -19,4 +26,4 @@ const Movies = ({ onSubmit, value, onChange, movies }) => (
   </>
 );
 
-export default Movies;
+export default withRouter(Movies);

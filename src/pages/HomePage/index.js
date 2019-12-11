@@ -6,23 +6,12 @@ const HomePage = () => {
   const [trendMovies, setTrendMovies] = useState([]);
 
   useEffect(() => {
-    // console.log('match :', props.match);
-    API.fetchMovieDB().then(({ data }) => setTrendMovies([...data.results]));
-    console.log('render :');
+    API.fetchTrendingMovies().then(({ data }) =>
+      setTrendMovies([...data.results]),
+    );
   }, []);
 
-  return (
-    trendMovies && (
-      <>
-        <h2>Popular today</h2>
-        <ul>
-          {trendMovies.map(el => (
-            <Home id={el.id} title={el.title} key={el.id} />
-          ))}
-        </ul>
-      </>
-    )
-  );
+  return trendMovies && <Home movies={trendMovies} />;
 };
 
 export default HomePage;

@@ -4,14 +4,22 @@ const myKey = '?api_key=94fb68635853dc276658cb1ea38dd975';
 
 const baseURL = 'https://api.themoviedb.org/3';
 
-export const fetchMovieDB = async (
-  data = '/trending/movie/day',
-  query = '',
-  url = baseURL,
-  key = myKey,
-) => {
-  const getValue = await axios.get(url + data + key + query);
-  return getValue;
+export const fetchTrendingMovies = () => {
+  return axios.get(`${baseURL}/trending/movie/day${myKey}`);
 };
 
-export const nothing = () => {};
+export const fetchSerchMovie = searchQuery => {
+  return axios.get(`${baseURL}/search/movie${myKey}&query=${searchQuery}`);
+};
+
+export const fetchMovieDetails = id => {
+  return axios.get(`${baseURL}/movie/${id}${myKey}`);
+};
+
+export const fetchCastDetails = id => {
+  return axios.get(`${baseURL}/movie/${id}/credits${myKey}`);
+};
+
+export const fetchReviewsDetail = id => {
+  return axios.get(`${baseURL}/movie/${id}/reviews${myKey}`);
+};

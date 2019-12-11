@@ -1,10 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const Home = ({ id, title }) => (
-  <li>
-    <Link to={`/movie/${id}`}>{title}</Link>
-  </li>
+const Home = ({ movies, location }) => (
+  <>
+    <h2>Popular today</h2>
+    <ul>
+      {movies.map(el => (
+        <li key={el.id}>
+          <Link
+            to={{
+              pathname: `/movie/${el.id}`,
+              state: { from: location },
+            }}
+          >
+            {el.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </>
 );
 
-export default Home;
+export default withRouter(Home);

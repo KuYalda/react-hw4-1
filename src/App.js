@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import HomePage from './pages/HomePage';
-import MoviesPage from './pages/MoviesPage';
-import MovieDetails from './components/MovieDetails';
+
+const HomePage = lazy(() =>
+  import('./pages/HomePage' /* webpackChunkName: "homePage" */),
+);
+const MoviesPage = lazy(() =>
+  import('./pages/MoviesPage' /* webpackChunkName: "moviesPage" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    './pages/MovieDetailsPage' /* webpackChunkName: "moviesDetailsPage" */
+  ),
+);
 
 const App = () => {
   return (
     <>
       <Navigation />
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/movie/:id#cast" component={MovieDetails} />
-        <Route path="/movie/:id#reviews" component={MovieDetails} />
-        <Route path="/movie/:id" component={MovieDetails} />
-        <Route path="/movies" component={MoviesPage} />
-        <Redirect to="/" />
-      </Switch>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/movies" component={MoviesPage} />
+          <Route path="/movie/:id" component={MovieDetailsPage} />
+          <Redirect to="/" />
+        </Switch>
+      </Suspense>
     </>
   );
 };
