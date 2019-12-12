@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import s from './MovieDetails.module.css';
 
@@ -42,5 +43,15 @@ const MovieDetails = ({ img, title, date, overview, genres, id, onClick }) => (
     </section>
   </>
 );
+
+MovieDetails.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf().isRequired,
+  id: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default MovieDetails;

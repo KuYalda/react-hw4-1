@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Movies from '../../components/Movies';
 import * as API from '../../services/fetchMovies';
 
@@ -34,6 +35,11 @@ const MoviesPage = ({ history, location }) => {
       movies={searchMovies}
     />
   );
+};
+
+MoviesPage.propTypes = {
+  history: PropTypes.objectOf().isRequired,
+  location: PropTypes.objectOf().isRequired,
 };
 
 export default MoviesPage;

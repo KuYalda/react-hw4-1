@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
 const Home = ({ movies, location }) => (
@@ -20,5 +21,10 @@ const Home = ({ movies, location }) => (
     </ul>
   </>
 );
+
+Home.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf().isRequired,
+};
 
 export default withRouter(Home);

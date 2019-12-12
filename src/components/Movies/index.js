@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
 const Movies = ({ onSubmit, value, onChange, movies, location }) => (
@@ -25,5 +26,13 @@ const Movies = ({ onSubmit, value, onChange, movies, location }) => (
     )}
   </>
 );
+
+Movies.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf().isRequired,
+};
 
 export default withRouter(Movies);
