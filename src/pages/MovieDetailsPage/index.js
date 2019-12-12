@@ -20,13 +20,15 @@ const MovieDetailsPage = ({ match }) => {
   const history = useHistory();
 
   useEffect(() => {
-    if (!state) {
+    API.fetchMovieDetails(id).then(({ data }) => setMovie({ ...data }));
+    if (state) {
+      setFrom(state.from);
+    } else if (history.length === 2) {
       setFrom('/');
     } else {
-      setFrom(state.from);
+      setFrom(prevFrom => prevFrom);
     }
-    API.fetchMovieDetails(id).then(({ data }) => setMovie({ ...data }));
-  }, [id, state]);
+  }, [id, state, history.length]);
 
   const handleClick = () => {
     history.push(from);
