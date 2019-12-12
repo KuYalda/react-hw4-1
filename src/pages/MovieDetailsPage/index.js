@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy } from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, useHistory, useLocation } from 'react-router-dom';
 import MovieDetails from '../../components/MovieDetails';
 import * as API from '../../services/fetchMovies';
 
@@ -12,11 +12,12 @@ const Reviews = lazy(() =>
   import('../../components/Reviews' /* webpackChunkName: "reviewsPage" */),
 );
 
-const MovieDetailsPage = ({ history, location, match }) => {
+const MovieDetailsPage = ({ match }) => {
   const [movie, setMovie] = useState([]);
   const [from, setFrom] = useState(undefined);
   const { id } = match.params;
-  const { state } = location;
+  const { state } = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     if (!state) {
@@ -32,27 +33,25 @@ const MovieDetailsPage = ({ history, location, match }) => {
   };
 
   return (
-    <>
-      <MovieDetails
-        img={movie.poster_path}
-        title={movie.original_title}
-        date={movie.release_date}
-        overview={movie.overview}
-        genres={movie.genres}
-        id={movie.id}
-        onClick={handleClick}
-      />
-      <Route path={`${match.path}/cast`} component={Cast} />
-      <Route path={`${match.path}/reviews`} component={Reviews} />
-    </>
+    console.log('from :', from) || (
+      <>
+        <MovieDetails
+          img={movie.poster_path}
+          title={movie.original_title}
+          date={movie.release_date}
+          overview={movie.overview}
+          genres={movie.genres}
+          id={movie.id}
+          onClick={handleClick}
+        />
+        <Route path={`${match.path}/cast`} component={Cast} />
+        <Route path={`${match.path}/reviews`} component={Reviews} />
+      </>
+    )
   );
 };
 
 MovieDetailsPage.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
-  location: PropTypes.objectOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,

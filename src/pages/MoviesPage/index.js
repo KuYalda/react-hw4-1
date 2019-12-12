@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useHistory, useLocation } from 'react-router-dom';
 import Movies from '../../components/Movies';
 import * as API from '../../services/fetchMovies';
 
-const MoviesPage = ({ history, location }) => {
+const MoviesPage = () => {
   const [searchValue, setSearchValue] = useState('');
   const [searchMovies, setSearchMovies] = useState([]);
+  const history = useHistory();
+  const location = useLocation();
 
   const handleChange = ({ target }) => {
     setSearchValue(target.value);
@@ -35,11 +37,6 @@ const MoviesPage = ({ history, location }) => {
       movies={searchMovies}
     />
   );
-};
-
-MoviesPage.propTypes = {
-  history: PropTypes.objectOf(PropTypes.func).isRequired,
-  location: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default MoviesPage;

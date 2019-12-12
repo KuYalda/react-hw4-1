@@ -58,7 +58,7 @@ MovieDetails.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   overview: PropTypes.string,
-  genres: PropTypes.arrayOf(PropTypes.string),
+  genres: PropTypes.arrayOf(PropTypes.object),
   id: PropTypes.number,
   onClick: PropTypes.func.isRequired,
 };
