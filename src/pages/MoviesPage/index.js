@@ -38,8 +38,8 @@ const MoviesPage = ({ history, location }) => {
 };
 
 MoviesPage.propTypes = {
-  history: PropTypes.objectOf().isRequired,
-  location: PropTypes.objectOf().isRequired,
+  history: PropTypes.objectOf(PropTypes.func).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default MoviesPage;

@@ -52,8 +52,7 @@ MovieDetailsPage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
-  location: PropTypes.objectOf(PropTypes.objectOf(PropTypes.objectOf()))
-    .isRequired,
+  location: PropTypes.objectOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,

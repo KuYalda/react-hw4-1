@@ -32,7 +32,7 @@ Movies.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  location: PropTypes.objectOf().isRequired,
+  location: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default withRouter(Movies);

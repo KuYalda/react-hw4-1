@@ -24,7 +24,7 @@ const Home = ({ movies, location }) => (
 
 Home.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  location: PropTypes.objectOf().isRequired,
+  location: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default withRouter(Home);

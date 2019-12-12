@@ -44,13 +44,22 @@ const MovieDetails = ({ img, title, date, overview, genres, id, onClick }) => (
   </>
 );
 
+MovieDetails.defaultProps = {
+  img: undefined,
+  title: undefined,
+  date: undefined,
+  overview: undefined,
+  genres: undefined,
+  id: undefined,
+};
+
 MovieDetails.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf().isRequired,
-  id: PropTypes.number.isRequired,
+  img: PropTypes.string,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  overview: PropTypes.string,
+  genres: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.number,
   onClick: PropTypes.func.isRequired,
 };
 
