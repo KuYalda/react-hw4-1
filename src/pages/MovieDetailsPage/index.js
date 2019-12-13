@@ -28,28 +28,27 @@ const MovieDetailsPage = ({ match }) => {
     } else {
       setFrom(prevFrom => prevFrom);
     }
-  }, [id, state, history.length]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   const handleClick = () => {
     history.push(from);
   };
 
   return (
-    console.log('from :', from) || (
-      <>
-        <MovieDetails
-          img={movie.poster_path}
-          title={movie.original_title}
-          date={movie.release_date}
-          overview={movie.overview}
-          genres={movie.genres}
-          id={movie.id}
-          onClick={handleClick}
-        />
-        <Route path={`${match.path}/cast`} component={Cast} />
-        <Route path={`${match.path}/reviews`} component={Reviews} />
-      </>
-    )
+    <>
+      <MovieDetails
+        img={movie.poster_path}
+        title={movie.original_title}
+        date={movie.release_date}
+        overview={movie.overview}
+        genres={movie.genres}
+        id={movie.id}
+        onClick={handleClick}
+      />
+      <Route path={`${match.path}/cast`} component={Cast} />
+      <Route path={`${match.path}/reviews`} component={Reviews} />
+    </>
   );
 };
 
