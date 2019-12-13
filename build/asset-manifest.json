@@ -1,0 +1,36 @@
+{
+  "files": {
+    "static/js/0.cf6bbc25.chunk.js": "/react-hw4-1/static/js/0.cf6bbc25.chunk.js",
+    "static/js/0.cf6bbc25.chunk.js.map": "/react-hw4-1/static/js/0.cf6bbc25.chunk.js.map",
+    "castPage.js": "/react-hw4-1/static/js/castPage.8e1505bc.chunk.js",
+    "castPage.js.map": "/react-hw4-1/static/js/castPage.8e1505bc.chunk.js.map",
+    "homePage.js": "/react-hw4-1/static/js/homePage.3ca14060.chunk.js",
+    "homePage.js.map": "/react-hw4-1/static/js/homePage.3ca14060.chunk.js.map",
+    "main.js": "/react-hw4-1/static/js/main.5ea042a5.chunk.js",
+    "main.js.map": "/react-hw4-1/static/js/main.5ea042a5.chunk.js.map",
+    "moviesDetailsPage.css": "/react-hw4-1/static/css/moviesDetailsPage.9d31953c.chunk.css",
+    "moviesDetailsPage.js": "/react-hw4-1/static/js/moviesDetailsPage.06245945.chunk.js",
+    "moviesDetailsPage.js.map": "/react-hw4-1/static/js/moviesDetailsPage.06245945.chunk.js.map",
+    "moviesPage.js": "/react-hw4-1/static/js/moviesPage.151a8b61.chunk.js",
+    "moviesPage.js.map": "/react-hw4-1/static/js/moviesPage.151a8b61.chunk.js.map",
+    "reviewsPage.css": "/react-hw4-1/static/css/reviewsPage.1a721ce7.chunk.css",
+    "reviewsPage.js": "/react-hw4-1/static/js/reviewsPage.406bef0e.chunk.js",
+    "reviewsPage.js.map": "/react-hw4-1/static/js/reviewsPage.406bef0e.chunk.js.map",
+    "runtime-main.js": "/react-hw4-1/static/js/runtime-main.18181dd8.js",
+    "runtime-main.js.map": "/react-hw4-1/static/js/runtime-main.18181dd8.js.map",
+    "static/js/8.46212432.chunk.js": "/react-hw4-1/static/js/8.46212432.chunk.js",
+    "static/js/8.46212432.chunk.js.map": "/react-hw4-1/static/js/8.46212432.chunk.js.map",
+    "index.html": "/react-hw4-1/index.html",
+    "precache-manifest.1230dc3e812039eea95e77067b69f852.js": "/react-hw4-1/precache-manifest.1230dc3e812039eea95e77067b69f852.js",
+    "service-worker.js": "/react-hw4-1/service-worker.js",
+    "static/css/moviesDetailsPage.9d31953c.chunk.css.map": "/react-hw4-1/static/css/moviesDetailsPage.9d31953c.chunk.css.map",
+    "static/css/reviewsPage.1a721ce7.chunk.css.map": "/react-hw4-1/static/css/reviewsPage.1a721ce7.chunk.css.map",
+    "static/js/0.cf6bbc25.chunk.js.LICENSE": "/react-hw4-1/static/js/0.cf6bbc25.chunk.js.LICENSE",
+    "static/js/8.46212432.chunk.js.LICENSE": "/react-hw4-1/static/js/8.46212432.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18181dd8.js",
+    "static/js/8.46212432.chunk.js",
+    "static/js/main.5ea042a5.chunk.js"
+  ]
+}
